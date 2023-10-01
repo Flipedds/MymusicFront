@@ -27,4 +27,15 @@ private apiUrl = 'http://localhost:5170/musics';
       }
     )
   }
+
+  removeMusic(id: number){
+    this.http.delete(`${this.apiUrl}/${id}`).subscribe(
+      (response) =>{
+        console.log(response);
+      },
+      (error) => {
+        console.error("Erro ao enviar o formulário:", error);
+      }
+    )
+  }
 }

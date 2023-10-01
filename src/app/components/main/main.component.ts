@@ -17,4 +17,8 @@ export class MainComponent {
     this.apiService.getDataFromAPI().subscribe((music) => (this.musics = music));
     console.log(this.musics);
   }
+
+  removeMusic(id: number) {
+    this.apiService.removeMusic(id);
+  }
 }

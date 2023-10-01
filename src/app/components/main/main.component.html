@@ -23,10 +23,10 @@
           <td class="text-center px-6 py-4">{{music.album}}</td>
           <td class="text-center px-6 py-4">{{music.musicalGenre}}</td>
           <td class="text-center px-6 py-4">{{music.duration}}</td>
-
-          <td class="text-center px-6 py-4"><button type="button" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Remover</button></td>
+          <td class="text-center px-6 py-4"><button type="button" (click)="music.id !== undefined && removeMusic(music.id)" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Remover</button></td>
 
         </tr>
+
       </tbody>
     </table>
   </div>

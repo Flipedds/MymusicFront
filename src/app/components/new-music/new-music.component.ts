@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Form} from "../../Form";
 import {ApiService} from "../../services/api.service";
+import {NgForm} from "@angular/forms";
+
 
 @Component({
   selector: 'app-new-music',
@@ -13,5 +15,9 @@ export class NewMusicComponent {
   }
   sendForm(value: Form) {
     this.apiService.postMusic(value);
+  }
+
+  resetForm(form: NgForm){
+    form.reset();
   }
 }
