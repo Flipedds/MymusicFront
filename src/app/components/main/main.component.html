@@ -4,24 +4,28 @@
     <table class="table mx-auto w-full">
       <thead class="bg-gray-50">
         <tr>
-          <th class="text-left px-6 py-4">Id</th>
-          <th class="text-left px-6 py-4">Título</th>
+          <th class="text-center px-6 py-4">Id</th>
+          <th class="text-center px-6 py-4">Título</th>
           <th class="text-center px-6 py-4">Artista</th>
-          <th class="text-right px-6 py-4">Compositor</th>
-          <th class="text-right px-6 py-4">Album</th>
-          <th class="text-right px-6 py-4">Gênero Musical</th>
-          <th class="text-left px-6 py-4">Duração</th>
+          <th class="text-center px-6 py-4">Compositor</th>
+          <th class="text-center px-6 py-4">Album</th>
+          <th class="text-center px-6 py-4">Gênero Musical</th>
+          <th class="text-center px-6 py-4">Duração</th>
+          <th class="text-center px-6 py-4">Deletar</th>
         </tr>
       </thead>
       <tbody class="bg-white">
         <tr *ngFor="let music of musics">
-          <td class="text-left px-6 py-4">{{music.id}}</td>
+          <td class="text-center px-6 py-4">{{music.id}}</td>
           <td class="text-center px-6 py-4">{{music.title}}</td>
-          <td class="text-right px-6 py-4">{{music.artist}}</td>
-          <td class="text-right px-6 py-4">{{music.composer}}</td>
-          <td class="text-right px-6 py-4">{{music.album}}</td>
-          <td class="text-right px-6 py-4">{{music.musicalGenre}}</td>
-          <td class="text-right px-6 py-4">{{music.duration}}</td>
+          <td class="text-center px-6 py-4">{{music.artist}}</td>
+          <td class="text-center px-6 py-4">{{music.composer}}</td>
+          <td class="text-center px-6 py-4">{{music.album}}</td>
+          <td class="text-center px-6 py-4">{{music.musicalGenre}}</td>
+          <td class="text-center px-6 py-4">{{music.duration}}</td>
+
+          <td class="text-center px-6 py-4"><button type="button" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Remover</button></td>
+
         </tr>
       </tbody>
     </table>
