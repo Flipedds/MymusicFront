@@ -1,0 +1,94 @@
+<!--
+  This example requires some changes to your config:
+
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<form #myForm="ngForm" (ngSubmit)="sendForm(myForm.value)">
+  <div class="space-y-12">
+    <div class="border-b border-gray-900/10 pb-12 ml-4 mt-4">
+      <h2 class="text-base font-semibold leading-7 text-gray-900">Nova música</h2>
+      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="sm:col-span-2">
+          <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Título</label>
+          <div class="mt-2">
+            <input type="text" name="title" id="title" ngModel required autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div [hidden]="myForm.form.get('title')?.valid"
+                 class="alert alert-danger">
+              Título é necessário!
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-3">
+          <label for="artist" class="block text-sm font-medium leading-6 text-gray-900">Artista</label>
+          <div class="mt-2">
+            <input type="text" name="artist" id="artist" ngModel required autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div [hidden]="myForm.form.get('artist')?.valid"
+                 class="alert alert-danger">
+              Artista é necessário!
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-2">
+          <label for="composer" class="block text-sm font-medium leading-6 text-gray-900">Compositor</label>
+          <div class="mt-2">
+            <input type="text" name="composer" id="composer" ngModel required autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div [hidden]="myForm.form.get('composer')?.valid"
+                 class="alert alert-danger">
+              Compositor é necessário!
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-3">
+          <label for="album" class="block text-sm font-medium leading-6 text-gray-900">Album</label>
+          <div class="mt-2">
+            <input type="text" name="album" id="album" ngModel required autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div [hidden]="myForm.form.get('album')?.valid"
+                 class="alert alert-danger">
+              Album é necessário!
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-2">
+          <label for="musicalGenre" class="block text-sm font-medium leading-6 text-gray-900">Gênero Musical</label>
+          <div class="mt-2">
+            <input type="text" name="musicalGenre" id="musicalGenre" ngModel required autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div [hidden]="myForm.form.get('musicalGenre')?.valid"
+                 class="alert alert-danger">
+              Gênero musical é necessário!
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-3">
+          <label for="duration" class="block text-sm font-medium leading-6 text-gray-900">Duração</label>
+          <div class="mt-2">
+            <input type="text" name="duration" id="duration" ngModel required autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div [hidden]="myForm.form.get('duration')?.valid"
+                 class="alert alert-danger">
+              Duração é necessária!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-x-6 mr-72">
+    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancelar</button>
+    <button type="submit" [disabled]="!myForm.form.valid" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+  </div>
+
+</form>

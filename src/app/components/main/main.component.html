@@ -1,0 +1,28 @@
+ <div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-4 ml-4">Músicas</h2>
+
+    <table class="table mx-auto w-full">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="text-left px-6 py-4">Id</th>
+          <th class="text-left px-6 py-4">Título</th>
+          <th class="text-center px-6 py-4">Artista</th>
+          <th class="text-right px-6 py-4">Compositor</th>
+          <th class="text-right px-6 py-4">Album</th>
+          <th class="text-right px-6 py-4">Gênero Musical</th>
+          <th class="text-left px-6 py-4">Duração</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white">
+        <tr *ngFor="let music of musics">
+          <td class="text-left px-6 py-4">{{music.id}}</td>
+          <td class="text-center px-6 py-4">{{music.title}}</td>
+          <td class="text-right px-6 py-4">{{music.artist}}</td>
+          <td class="text-right px-6 py-4">{{music.composer}}</td>
+          <td class="text-right px-6 py-4">{{music.album}}</td>
+          <td class="text-right px-6 py-4">{{music.musicalGenre}}</td>
+          <td class="text-right px-6 py-4">{{music.duration}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
