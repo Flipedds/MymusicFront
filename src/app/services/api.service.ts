@@ -20,10 +20,12 @@ private apiUrl = 'http://localhost:5170/musics';
     this.http.post(`${this.apiUrl}`, JSON.stringify(value), {headers}).subscribe(
       (response) => {
           console.log(response);
+          alert("Música Adicionada!");
 
       },
       (error) => {
         console.error("Erro ao enviar o formulário:", error);
+        alert("erro ao enviar !");
       }
     )
   }
@@ -32,9 +34,29 @@ private apiUrl = 'http://localhost:5170/musics';
     this.http.delete(`${this.apiUrl}/${id}`).subscribe(
       (response) =>{
         console.log(response);
+        alert("Música Removida!");
       },
       (error) => {
         console.error("Erro ao enviar o formulário:", error);
+        alert("erro ao enviar !");
+      }
+    )
+  }
+
+  updateMusic(music: any){
+    const headers = { 'Content-Type': 'application/json' };
+    const id = music.id;
+    delete music.id;
+
+    this.http.put(`${this.apiUrl}/${id}`, JSON.stringify(music), {headers}).subscribe(
+      (response) => {
+          console.log(response);
+          alert("Música atualizada!");
+
+      },
+      (error) => {
+        console.error("Erro ao enviar o formulário:", error);
+        alert("erro ao enviar !");
       }
     )
   }

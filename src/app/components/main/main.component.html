@@ -1,5 +1,5 @@
  <div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-4 ml-4">Músicas</h2>
+    <h2 class="text-2xl font-bold mb-4 ml-6">Músicas</h2>
 
     <table class="table mx-auto w-full">
       <thead class="bg-gray-50">
@@ -104,9 +104,9 @@
     </div>
   </div>
 
-  <div class="mt-6 flex items-center justify-end gap-x-6 mr-72">
+  <div class="mt-6 flex items-center justify-end gap-x-6 mr-72 mb-4">
     <button type="button" (click)="cancelarAtualizacao()" class="text-sm font-semibold leading-6 text-gray-900">Cancelar</button>
-    <button type="submit" [disabled]="!myForm.form.valid" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+    <button type="button" (click)="atualizarMusica()" [disabled]="!myForm.form.valid" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
   </div>
 
 </form>

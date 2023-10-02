@@ -27,6 +27,11 @@ export class MainComponent {
     this.selectMusic = musica;
   }
 
+  atualizarMusica(){
+    this.apiService.updateMusic(this.selectMusic);
+  }
+
+
   cancelarAtualizacao(){
     this.selectMusic = null;
   }
