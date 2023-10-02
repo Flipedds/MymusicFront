@@ -10,6 +10,7 @@ import {CommonModule} from "@angular/common";
 })
 export class MainComponent {
   musics: Music[] = [];
+  selectMusic: any = null;
   constructor(private apiService: ApiService) {
     this.getMusic();
   }
@@ -21,4 +22,14 @@ export class MainComponent {
   removeMusic(id: number) {
     this.apiService.removeMusic(id);
   }
+
+  selecionarMusica(musica: Music){
+    this.selectMusic = musica;
+  }
+
+  cancelarAtualizacao(){
+    this.selectMusic = null;
+  }
+
+
 }
