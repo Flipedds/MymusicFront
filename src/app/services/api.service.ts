@@ -19,7 +19,6 @@ private apiUrl = 'http://localhost:5170/musics';
     const headers = { 'Content-Type': 'application/json' };
     this.http.post(`${this.apiUrl}`, JSON.stringify(value), {headers}).subscribe(
       (response) => {
-          console.log(response);
           alert("Música Adicionada!");
 
       },
@@ -33,7 +32,6 @@ private apiUrl = 'http://localhost:5170/musics';
   removeMusic(id: number){
     this.http.delete(`${this.apiUrl}/${id}`).subscribe(
       (response) =>{
-        console.log(response);
         alert("Música Removida!");
       },
       (error) => {
@@ -50,7 +48,6 @@ private apiUrl = 'http://localhost:5170/musics';
 
     this.http.put(`${this.apiUrl}/${id}`, JSON.stringify(music), {headers}).subscribe(
       (response) => {
-          console.log(response);
           alert("Música atualizada!");
 
       },
