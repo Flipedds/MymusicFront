@@ -3,15 +3,19 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class StorageService {
-
-  constructor() { }
-
-  setItem(key : string, value: boolean): void{
-    localStorage.setItem(key, String(value));
+  constructor(){}
+  private logincondition: boolean = false;
+  setCondition(): void{
+    this.logincondition = true;
   }
 
-  removeItem(key: string): void{
-    localStorage.removeItem(key);
+  removeCondition(): void{
+    this.logincondition = false;
+  }
+
+  getCondition(): boolean{
+    return this.logincondition;
   }
 }
