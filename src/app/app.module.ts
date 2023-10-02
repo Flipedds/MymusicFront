@@ -8,12 +8,14 @@ import { MainComponent } from './components/main/main.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NewMusicComponent } from './components/new-music/new-music.component';
 import {FormsModule} from "@angular/forms";
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
     NewMusicComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

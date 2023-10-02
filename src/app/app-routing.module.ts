@@ -1,11 +1,12 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {MainComponent} from "./components/main/main.component";
-import {NewMusicComponent} from "./components/new-music/new-music.component";
+import {LoginComponent} from "./components/login/login.component";
+import {loginGuard} from "./guards/login.guard";
 
 const routes:Routes = [
-  {path: '', component: MainComponent},
-  {path: 'newmusic', component: NewMusicComponent}
+  {path: '', component: MainComponent, canActivate: [loginGuard]},
+  {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({
