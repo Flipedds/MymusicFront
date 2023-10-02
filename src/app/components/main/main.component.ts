@@ -11,6 +11,7 @@ import {CommonModule} from "@angular/common";
 export class MainComponent {
   musics: Music[] = [];
   selectMusic: any = null;
+  newMusic: boolean = false;
   constructor(private apiService: ApiService) {
     this.getMusic();
   }
@@ -29,6 +30,7 @@ export class MainComponent {
 
   atualizarMusica(){
     this.apiService.updateMusic(this.selectMusic);
+    this.cancelarAtualizacao();
   }
 
 
@@ -36,5 +38,13 @@ export class MainComponent {
     this.selectMusic = null;
   }
 
+  novaMusica(){
+      if(this.newMusic === false){
+        this.newMusic = true;
+      }
+      else {
+        this.newMusic = false;
+      }
+    }
 
 }
