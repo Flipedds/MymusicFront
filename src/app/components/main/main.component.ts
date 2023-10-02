@@ -22,6 +22,7 @@ export class MainComponent {
 
   removeMusic(id: number) {
     this.apiService.removeMusic(id);
+    this.musics = this.musics.filter(music => music.id !== id);
   }
 
   selecionarMusica(musica: Music){

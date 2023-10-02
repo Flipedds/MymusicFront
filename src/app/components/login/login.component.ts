@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class LoginComponent {
 
   email: string = "filipeteste@gmail.com";
-  senha: string = "9iro3ir309203rii0";
+  senha: string = "12345";
 
   constructor(private storageService: StorageService, private router: Router) {
   }
