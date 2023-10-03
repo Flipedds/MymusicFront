@@ -1,12 +1,14 @@
 import {CanActivateFn, Router} from "@angular/router";
-import {StorageService} from "../services/storage.service";
 import {inject} from "@angular/core";
+import {CookieService} from "ngx-cookie-service";
+
+
 
 export const loginGuard: CanActivateFn = (route, state) => {
   const router: Router = new Router();
-  const storageService: StorageService = inject(StorageService);
+  const cookieService: CookieService = inject(CookieService);
 
-  if (storageService.getCondition()){
+  if (cookieService.get('login') == "true"){
     return true;
   }
   else {

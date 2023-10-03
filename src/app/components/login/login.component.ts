@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {StorageService} from "../../services/storage.service";
 import {Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,11 @@ export class LoginComponent {
   email: string = "filipeteste@gmail.com";
   senha: string = "12345";
 
-  constructor(private storageService: StorageService, private router: Router) {
+  constructor(private router: Router, private cookieService: CookieService) {
   }
   sendForm(value: any) {
       if (value.email == this.email && value.password == this.senha){
-        this.storageService.setCondition();
+        this.cookieService.set('login', 'true', 5 / (24 * 60), '/', '', true, 'Lax');
         this.router.navigate(['/']);
       }
       else{

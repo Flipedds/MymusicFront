@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {StorageService} from "../../services/storage.service";
 import {Route, Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-header',
@@ -9,10 +9,10 @@ import {Route, Router} from "@angular/router";
 })
 export class HeaderComponent {
 
-  constructor(private storageService: StorageService, private router: Router) {
+  constructor(private router: Router, private cookieService: CookieService) {
   }
   logout() {
-    this.storageService.removeCondition();
+    this.cookieService.delete('login', '/');
     this.router.navigate(['/login']);
   }
 }
